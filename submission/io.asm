@@ -18,7 +18,7 @@ LD /100       ; Carrega X convertido
 AD /102       ; Soma com Y convertido
 MM /104       ; Armazena o resultado da soma
 
-LD /104       ; Carrega o resultado
+LD /108       ; Carrega o resultado
 SB /10A       ; Verifica se o dígito menos significativo >= A
 JN /0050      ; Se não precisar de ajuste, pula
 
