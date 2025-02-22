@@ -20,7 +20,7 @@ MM /104       ; Armazena o resultado da soma
 
 LD /104       ; Carrega o resultado
 SB /10A       ; Verifica se o dígito menos significativo >= A
-JZ /0050      ; Se não precisar de ajuste, pula
+JN /0050      ; Se não precisar de ajuste, pula
 
 SB /10A       ; Subtrai 0x000A (corrige o "vai-um")
 AD /10C       ; Soma 0x0100 para o "vai-um"
