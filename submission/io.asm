@@ -28,7 +28,7 @@ AD /10C       ; Soma 0x0100 para o "vai-um"
 MM /104       ; Atualiza o resultado
 LD /104       ; carreguei o resultado
 AD /108       ; adicionar para o algoritmo
-PD /100      ; printei o final
+PD /100       ; printei o final
 
 @ /0050
 LD /104       ; Carrega o resultado final
