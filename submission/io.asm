@@ -26,6 +26,9 @@ JN /0050      ; Se não precisar de ajuste, pula
 SB /10A       ; Subtrai 0x000A (corrige o "vai-um")
 AD /10C       ; Soma 0x0100 para o "vai-um"
 MM /104       ; Atualiza o resultado
+LD /104       ; carreguei o resultado
+AD /108       ; adicionar para o algoritmo
+PD /100      ; printei o final
 
 @ /0050
 LD /104       ; Carrega o resultado final
@@ -43,4 +46,4 @@ K /0000       ; Resultado da soma
 K /3030       ; Constante ASCII (-0x3030)
 K /000A       ; Constante para ajuste do "vai-um"
 K /0100       ; Constante para somar 0x0100 no "vai-um")
-K /0000       ; memoria auxiliar testa esse
+K /0000       ; memoria auxiliar
