@@ -13,7 +13,6 @@ GD /000       ; Lê os espaços entre os números (descarta)
 MM /10E       ; armazena os espaços
 GD /000       ; Lê os últimos dois dígitos (Y)
 MM /102       ; armazena Y
-LD /102       ; carreguei Y
 SB /108       ; Subtrai 0x3030 para converter de ASCII para decimal
 MM /102       ; Armazena Y convertido
 
@@ -23,10 +22,10 @@ MM /10C       ; Armazena o resultado da soma
 MM /104       ; armazena o auxiliar da soma
 
 LD /10C       ; Carrega o resultado
-SB /10A       ; Verifica se o dígito menos significativo >= A
-JN /0050      ; Se não precisar de ajuste, pula
+SB /108       ; Verifica se o dígito menos significativo >= A
+JN /050      ; Se não precisar de ajuste, pula
 
-AD /10C       ; Soma 0x0100 para o "vai-um"
+AD /10A       ; Soma 0x0100 para o "vai-um"
 MM /104       ; Atualiza o resultado
 LD /104       ; carreguei o resultado
 AD /108       ; adicionar para o algoritmo
@@ -37,7 +36,6 @@ RS /00E
 LD /104       ; Carrega o resultado final
 AD /108       ; Soma 0x3030 para converter de volta para ASCII
 PD /100       ; Imprime o resultado no monitor
-
 RS /00E       ; Retorna da sub-rotina
 
 @ /0100
