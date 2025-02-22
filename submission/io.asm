@@ -6,11 +6,13 @@ HM /0000      ; Para a execução
 K /0000       ; Inicializa variável auxiliar
 
 GD /000       ; Lê os dois primeiros dígitos (X)
+JZ /0020      ; Se não houver entrada, pula para evitar erro
 SB /108       ; Converte de ASCII para decimal (subtrai 0x3030)
 MM /100       ; Armazena X convertido
 
 GD /000       ; Lê o espaço (descarta)
 GD /000       ; Lê os últimos dois dígitos (Y)
+JZ /0020      ; Se não houver entrada, pula para evitar erro
 SB /108       ; Converte de ASCII para decimal
 MM /102       ; Armazena Y convertido
 
@@ -45,3 +47,4 @@ K /0000       ; Memória auxiliar para armazenar a soma original
 K /3030       ; Constante ASCII (-0x3030)
 K /000A       ; Constante para ajuste do "vai-um"
 K /0100       ; Constante para somar 0x0100 no "vai-um")
+
